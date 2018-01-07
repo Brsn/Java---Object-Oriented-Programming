@@ -1,0 +1,111 @@
+//main 
+
+public class Main { 
+  
+ public static void main(string[] args) { 
+
+
+}
+}
+
+
+//player
+
+public abstract class Player { 
+  private String name;
+ 
+  public Player (String Name) { 
+  this.name = name;
+}
+  public String getName() { 
+  return name;
+}
+
+}
+
+//Baseball Player
+
+
+ public class BaseballPlayer extends Player { 
+
+ public BaseballPlayer(String name) { 
+
+ super(name);
+
+ }
+}
+//Football Player
+
+
+  public class FootballPlayer extends Player { 
+
+   public FootballPlayer(String Name) { 
+
+   super(name); 
+}
+}
+//Soccer Player
+
+
+  public class SoccerPlayer extends Player { 
+
+  public SoccerPlayer(String Name) { 
+
+   super(name);
+}
+}
+//Team
+
+public class Team {
+ 
+  private String name;
+  int played = 0;
+  int won = 0;
+  int lost = 0;
+  int tied = 0;
+
+
+  private ArrayList<Player> members = new ArrayList<>();
+ //Make sure the java project is set to 1.8
+
+
+
+ public Team (String name) { 
+   this.name = name;
+}
+//constructor to intilize the name
+
+public String getName() { 
+  return name;
+}
+//getter grabs the name
+
+ public boolean addPlayer (Player player) { 
+  if (members.contains(player)) {
+    System.out.println(player.getName() + " is already on this team");
+    return false;
+ } else { 
+   members.add(player);
+   System.out.println(player.getName() + " picked for team " + this.name);
+   return true;
+}
+//Method to add the player if not found. If found returns false.
+
+}
+ public int numPlayers() { 
+   return this.members.size();
+}
+//Method that grabs the arraylist size
+
+ public void matchResult(Team opponent, int ourScore, int theirScore) { 
+ if(ourScore > theirScore) {
+  won++;
+ if(ourScore == theirScore) { 
+  tied++;
+ } else { 
+  lost++;
+}
+
+ 
+}
+}
